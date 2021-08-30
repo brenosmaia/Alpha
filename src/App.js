@@ -5,18 +5,20 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./services/PrivateRoute";
 import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
+import HomeAdm from "./pages/HomeAdm";
+import Graphics from "./pages/Graphics"
 
 
 function App() {
   return (
-    <Container className="bg-dark text-black" style={{ minHeight: "100vh" }}>
+    <Container className="bg-dark text-black" style={{ minHeight: "100vh", width:"100%" }}>
       <Router>
         <AuthProvider>
           <Switch>
             {/* <PrivateRoute exact path="/" component={Home} /> */}
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />   
+            <Route exact path="/" component={Login} />
+            <Route path="/homeadm" component={HomeAdm} />
+            <Route path="/graphics" component={Graphics} />   
           </Switch>
         </AuthProvider>
       </Router>

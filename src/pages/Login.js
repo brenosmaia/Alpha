@@ -19,14 +19,14 @@ export default function Login() {
     try {
       setError("");
       setLoading(true);
-      let response = await login(
-        emailRef.current.value,
-        passwordRef.current.value
-      );
-      if (response.code === "auth/wrong-password") {
-        throw "Email e senha não conferem";
-      }
-      history.push("/");
+      // let response = await login(
+      //   emailRef.current.value,
+      //   passwordRef.current.value
+      // );
+      // if (response.code === "auth/wrong-password") {
+      //   throw "Email e senha não conferem";
+      // }
+      history.push("/home");
     } catch (e) {
       e == "Email e senha não conferem"
         ? setError(e)
