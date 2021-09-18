@@ -7,6 +7,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/Login";
 import HomeAdm from "./pages/HomeAdm";
 import Graphics from "./pages/Graphics"
+import Home from "./pages/Home"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route path="/homeadm" component={HomeAdm} />
             <Route path="/graphics" component={Graphics} />   
+            <Route path="/home" component={Home} />   
           </Switch>
         </AuthProvider>
       </Router>

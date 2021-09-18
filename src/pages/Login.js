@@ -26,7 +26,14 @@ export default function Login() {
       // if (response.code === "auth/wrong-password") {
       //   throw "Email e senha não conferem";
       // }
+      // if(response.body.isAdm){
+      //   history.push("/homeadm");
+      // }
+      // else{
+      //   history.push("/home");
+      // }
       history.push("/home");
+
     } catch (e) {
       e == "Email e senha não conferem"
         ? setError(e)
@@ -56,7 +63,6 @@ export default function Login() {
         <Card
           style={{
             display: "block",
-            backgroundColor: "red",
           }}
         >
           <Card.Body>
@@ -84,6 +90,7 @@ export default function Login() {
               <div className="text-center">
                 <Button
                   disabled={loading}
+                  style={{margin:'10px'}}
                   className="w-40 btn-lg"
                   type="submit"
                 >
