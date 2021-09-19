@@ -9,22 +9,17 @@ import CloseButton from "react-bootstrap/CloseButton";
 
 export default function Home() {
   const [userData, setUserData] = useState({});
+  const [modalIsOpen, setIsOpen] = React.useState(false);
   const history = useHistory();
 
   const navigateToHome = (event) => {
     history.push("/home");
   };
 
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
   function openModal() {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
-    subtitle.style.color = "#fff";
-  }
 
   function closeModal() {
     setIsOpen(false);
@@ -170,7 +165,6 @@ export default function Home() {
       </div>
       <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
       >
@@ -181,7 +175,7 @@ export default function Home() {
             justifyContent: "space-between",
           }}
         >
-          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Pedido X</h2>
+          <h2>Pedido X</h2>
           <CloseButton variant="white" onClick={closeModal}></CloseButton>
         </div>
         <div
