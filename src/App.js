@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import HomeAdm from "./pages/HomeAdm";
 import Graphics from "./pages/Graphics"
 import Home from "./pages/Home"
+import Produtos from "./pages/Produtos"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/homeadm" component={HomeAdm} />
             <Route path="/graphics" component={Graphics} />   
             <Route path="/home" component={Home} />   
+            <Route path="/produtos" component={Produtos} />   
           </Switch>
         </AuthProvider>
       </Router>
