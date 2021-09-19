@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
+import CloseButton from "react-bootstrap/CloseButton";
 
 export default function Produtos() {
     const [userData, setUserData] = useState({});
@@ -14,13 +15,15 @@ export default function Produtos() {
   
     const navigateToHome = (event) =>{
         history.push("/homeadm");
-      }
-      const navigateToGraph = (event) =>{
+    }
+
+    const navigateToGraph = (event) =>{
         history.push("/graphics");
-      }
-      const navigateToProducts = (event) =>{
+    }
+
+    const navigateToProducts = (event) =>{
         history.push("/produtos");
-      }
+    }
 
     function openModal() {
         setIsOpen(true);
@@ -58,7 +61,7 @@ export default function Produtos() {
             <Nav className="me-auto">
             <Nav.Link onClick={e => navigateToHome(e)}>Criar pedidos</Nav.Link>
             <Nav.Link onClick={e => navigateToProducts(e)}>Criar produtos</Nav.Link>
-            <Nav.Link onClick={e => navigateToGraph(e)}>Vizualizar gráficos</Nav.Link>
+            <Nav.Link onClick={e => navigateToGraph(e)}>Visualizar gráficos</Nav.Link>
           </Nav>
             </div>
         </Navbar>
@@ -75,12 +78,32 @@ export default function Produtos() {
             style={customStyles}
             contentLabel="Example Modal"
         >
-            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-            <button onClick={closeModal}>close</button>
+            <div style={{display: "flex",
+                        justifyContent: "space-between"}}>
+                <h2 style={{ color: "black" }} ref={(_subtitle) => (subtitle = _subtitle)}>Criar produto</h2>
+                <CloseButton onClick={closeModal}></CloseButton>
+            </div>
             <form>
-                <label></label>
-                <input/>
-                <input/>
+               <div style={{ display: "flex", 
+                    justifyContent: "space-between",
+                    marginTop: "10px"}}>
+                    <label>Nome: </label>
+                    <input style={{ marginLeft: "10px" }}/>
+                </div>
+                <div style={{ display: "flex", 
+                     justifyContent: "space-between",
+                     marginTop: "10px"}}>
+                    <label>Descrição: </label>
+                    <input style={{ marginLeft: "10px" }}/>
+                </div>
+                <div style={{ display: "flex", 
+                    justifyContent: "space-between",
+                    marginTop: "10px"}}>
+                    <label>Preço: </label>
+                    <input style={{ marginLeft: "10px" }}/>
+                </div>
+                
+                <button style={{marginTop: "10px"}}>Salvar produto</button>
             </form>
         </Modal>
     </>
