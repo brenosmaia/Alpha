@@ -7,7 +7,7 @@ import Board from "react-trello";
 import Modal from "react-modal";
 import CloseButton from "react-bootstrap/CloseButton";
 
-export default function Home() {
+export default function Orders() {
   const [userData, setUserData] = useState({});
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const history = useHistory();
@@ -15,6 +15,7 @@ export default function Home() {
   const navigateToHome = (event) => {
     history.push("/home");
   };
+
   const navigateToOrders = (event) => {
     history.push("/orders");
   };
@@ -22,7 +23,6 @@ export default function Home() {
   function openModal() {
     setIsOpen(true);
   }
-
 
   function closeModal() {
     setIsOpen(false);
@@ -153,22 +153,133 @@ export default function Home() {
         <div
           className="container"
           style={{
+            borderRadius: "5px",
+            padding: "20px",
             position: "absolute",
             marginTop: "40px",
             width: "100%",
-
+            backgroundColor: "#ccc",
+            height: "900px",
             marginLeft: "-20px",
           }}
         >
-          <Board
-            data={data}
-            onCardClick={openModal}
-            style={{
-              backgroundColor: "rgb(253 253 253 / 69%)",
-            }}
-          />
+          <h2>Criar Pedido</h2>
+          <Form>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "920px",
+              }}
+            >
+              <div>Produtos</div>
+              <div>Quantidade</div>
+            </div>
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="item 1" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="item 2" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="item 3" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="item 4" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="item 5" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="item 6" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="item 7" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="comments.ControlTextarea1">
+              <Form.Label>Observações</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+
+            <Button variant="primary" type="submit" style={{ width: "100px" }} >
+              Criar
+            </Button>
+          </Form>
         </div>
       </div>
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -191,18 +302,7 @@ export default function Home() {
             justifyContent: "space-between",
           }}
         >
-          <div>2 coxinhas</div>
-          <div>1 coquinha</div>
-          <div>1 pizza de 2 dias</div>
-          <div>1 canja pra viajem</div>
-          <div>1 sobremesa</div>
-          {/* <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
-          </form> */}
+          <h2>Pedido X criado com sucesso</h2>
         </div>
       </Modal>
     </>

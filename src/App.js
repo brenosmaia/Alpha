@@ -9,6 +9,7 @@ import HomeAdm from "./pages/HomeAdm";
 import Graphics from "./pages/Graphics"
 import Home from "./pages/Home"
 import Produtos from "./pages/Produtos"
+import Orders from "./pages/Orders"
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/graphics" component={Graphics} />   
             <Route path="/home" component={Home} />   
             <Route path="/produtos" component={Produtos} />   
+            <Route path="/orders" component={Orders} />   
           </Switch>
         </AuthProvider>
       </Router>
