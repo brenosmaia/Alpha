@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import { useHistory } from "react-router-dom";
 import Board from "react-trello";
 import Modal from "react-modal";
+import CloseButton from "react-bootstrap/CloseButton";
 
 export default function Home() {
   const [userData, setUserData] = useState({});
@@ -13,9 +14,6 @@ export default function Home() {
   const navigateToHome = (event) => {
     history.push("/home");
   };
-  //   const navigateToGraph = (event) =>{
-  //     history.push("/graphics");
-  //   }
 
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -25,8 +23,7 @@ export default function Home() {
   }
 
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
+    subtitle.style.color = "#fff";
   }
 
   function closeModal() {
@@ -36,8 +33,8 @@ export default function Home() {
   const data = {
     lanes: [
       {
-        id: "lane1",
-        title: "Planned Tasks",
+        id: "liberado",
+        title: "Liberado",
         label: "2/2",
         cards: [
           {
@@ -45,7 +42,6 @@ export default function Home() {
             title: "Write Blog",
             description: "Can AI make memes",
             label: "30 mins",
-            draggable: false,
           },
           {
             id: "Card2",
@@ -57,10 +53,64 @@ export default function Home() {
         ],
       },
       {
-        id: "lane2",
-        title: "Completed",
-        label: "0/0",
-        cards: [],
+        id: "preparo",
+        title: "Em Preparo",
+        label: "2/2",
+        cards: [
+          {
+            id: "Card3",
+            title: "Write Blog",
+            description: "Can AI make memes",
+            label: "30 mins",
+          },
+          {
+            id: "Card4",
+            title: "Pay Rent",
+            description: "Transfer via NEFT",
+            label: "5 mins",
+            metadata: { sha: "be312a1" },
+          },
+        ],
+      },
+      {
+        id: "atendido",
+        title: "Atendido Totalmente",
+        label: "2/2",
+        cards: [
+          {
+            id: "Card5",
+            title: "Write Blog",
+            description: "Can AI make memes",
+            label: "30 mins",
+          },
+          {
+            id: "Card6",
+            title: "Pay Rent",
+            description: "Transfer via NEFT",
+            label: "5 mins",
+            metadata: { sha: "be312a1" },
+          },
+        ],
+      },
+      {
+        id: "finalizado",
+        title: "Finalizado",
+        label: "2/2",
+        cards: [
+          {
+            id: "Card7",
+            title: "Write Blog",
+            description: "Can AI make memes",
+            label: "30 mins",
+          },
+          {
+            id: "Card8",
+            title: "Pay Rent",
+            description: "Transfer via NEFT",
+            label: "5 mins",
+            metadata: { sha: "be312a1" },
+          },
+        ],
       },
     ],
   };
@@ -73,6 +123,11 @@ export default function Home() {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      backgroundColor: "#343a40",
+      color: "white",
+      display: "flex",
+      width: "700px",
+      flexDirection: "column",
     },
   };
 
@@ -90,33 +145,17 @@ export default function Home() {
             <Nav.Link onClick={(e) => navigateToHome(e)}>
               Visualizar pedidos
             </Nav.Link>
-            {/* <Nav.Link onClick={e => navigateToGraph(e)}>Vizualizar gráficos</Nav.Link> */}
           </Nav>
         </div>
       </Navbar>
-      <div
-        className="container"
-        // style={{
-        //   width: "1910px",
-        //   height: "950px",
-        //   marginLeft: "-400px",
-        // }}
-      >
-        {/* <Card
-          className="align-item-center"
-          style={{
-            position: "absolute",
-            marginTop: "100px",
-            backgroundColor: "rgb(253 253 253 / 69%)",
-            marginLeft: "850px",
-          }}
-        ></Card> */}
+      <div className="container">
         <div
           className="container"
           style={{
             position: "absolute",
             marginTop: "40px",
             width: "100%",
+
             marginLeft: "-20px",
           }}
         >
@@ -134,18 +173,37 @@ export default function Home() {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Pedido X</h2>
+          <CloseButton variant="white" onClick={closeModal}></CloseButton>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>2 coxinhas</div>
+          <div>1 coquinha</div>
+          <div>1 pizza de 2 dias</div>
+          <div>1 canja pra viajem</div>
+          <div>1 sobremesa</div>
+          {/* <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form> */}
+        </div>
       </Modal>
     </>
   );
