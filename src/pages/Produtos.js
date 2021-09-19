@@ -12,9 +12,15 @@ export default function Produtos() {
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
   
-    const navigateToHome = (event) => {
-        history.push("/home");
-    };
+    const navigateToHome = (event) =>{
+        history.push("/homeadm");
+      }
+      const navigateToGraph = (event) =>{
+        history.push("/graphics");
+      }
+      const navigateToProducts = (event) =>{
+        history.push("/produtos");
+      }
 
     function openModal() {
         setIsOpen(true);
@@ -49,12 +55,11 @@ export default function Produtos() {
             style={{ paddingLeft: "30px" }}
         >  <div style={{ display: "flex" }}>
             <Navbar.Brand onClick={(e) => navigateToHome(e)}>Alpha</Navbar.Brand>
-                <Nav className="me-auto">
-                <Nav.Link onClick={(e) => navigateToHome(e)}>
-                    Visualizar produtos
-                </Nav.Link>
-                {/* <Nav.Link onClick={e => navigateToGraph(e)}>Vizualizar gráficos</Nav.Link> */}
-                </Nav>
+            <Nav className="me-auto">
+            <Nav.Link onClick={e => navigateToHome(e)}>Criar pedidos</Nav.Link>
+            <Nav.Link onClick={e => navigateToProducts(e)}>Criar produtos</Nav.Link>
+            <Nav.Link onClick={e => navigateToGraph(e)}>Vizualizar gráficos</Nav.Link>
+          </Nav>
             </div>
         </Navbar>
         <Button

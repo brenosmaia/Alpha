@@ -14,7 +14,9 @@ export default function Graphics() {
   const navigateToGraph = (event) =>{
     history.push("/graphics");
   }
-
+  const navigateToProducts = (event) =>{
+    history.push("/produtos");
+  }
   return (
     <>
       <Navbar
@@ -27,6 +29,7 @@ export default function Graphics() {
           <Navbar.Brand onClick={e => navigateToHome(e)}>Alpha</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={e => navigateToHome(e)}>Criar pedidos</Nav.Link>
+            <Nav.Link onClick={e => navigateToProducts(e)}>Criar produtos</Nav.Link>
             <Nav.Link onClick={e => navigateToGraph(e)}>Vizualizar gráficos</Nav.Link>
           </Nav>
         </div>
