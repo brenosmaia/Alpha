@@ -33,7 +33,6 @@ export default function Login() {
       //   history.push("/home");
       // }
       history.push("/home");
-
     } catch (e) {
       e == "Email e senha não conferem"
         ? setError(e)
@@ -42,10 +41,100 @@ export default function Login() {
 
     setLoading(false);
   }
+  function initializeBoard(){
+    localStorage.setItem("dataBoard",
+      JSON.stringify({
+        lanes: [
+          {
+            id: "liberado",
+            title: "Liberado",
+            label: "2/2",
+            cards: [
+              {
+                id: "Card1",
+                title: "Write Blog",
+                description: "Can AI make memes",
+                label: "30 mins",
+              },
+              {
+                id: "Card2",
+                title: "Pay Rent",
+                description: "Transfer via NEFT",
+                label: "5 mins",
+                metadata: { sha: "be312a1" },
+              },
+            ],
+          },
+          {
+            id: "preparo",
+            title: "Em Preparo",
+            label: "2/2",
+            cards: [
+              {
+                id: "Card3",
+                title: "Write Blog",
+                description: "Can AI make memes",
+                label: "30 mins",
+              },
+              {
+                id: "Card4",
+                title: "Pay Rent",
+                description: "Transfer via NEFT",
+                label: "5 mins",
+                metadata: { sha: "be312a1" },
+              },
+            ],
+          },
+          {
+            id: "atendido",
+            title: "Atendido Totalmente",
+            label: "2/2",
+            cards: [
+              {
+                id: "Card5",
+                title: "Write Blog",
+                description: "Can AI make memes",
+                label: "30 mins",
+              },
+              {
+                id: "Card6",
+                title: "Pay Rent",
+                description: "Transfer via NEFT",
+                label: "5 mins",
+                metadata: { sha: "be312a1" },
+              },
+            ],
+          },
+          {
+            id: "finalizado",
+            title: "Finalizado",
+            label: "2/2",
+            cards: [
+              {
+                id: "Card7",
+                title: "Write Blog",
+                description: "Can AI make memes",
+                label: "30 mins",
+              },
+              {
+                id: "Card8",
+                title: "Pay Rent",
+                description: "Transfer via NEFT",
+                label: "5 mins",
+                metadata: { sha: "be312a1" },
+              },
+            ],
+          },
+        ],
+      })
+    );
+  }
+  
 
   useEffect(() => {
     console.log(currentUser);
-  });
+    initializeBoard()
+  },[]);
 
   return (
     <>
@@ -90,7 +179,7 @@ export default function Login() {
               <div className="text-center">
                 <Button
                   disabled={loading}
-                  style={{margin:'10px'}}
+                  style={{ margin: "10px" }}
                   className="w-40 btn-lg"
                   type="submit"
                 >
