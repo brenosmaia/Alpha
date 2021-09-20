@@ -8,7 +8,7 @@ import Modal from "react-modal";
 import CloseButton from "react-bootstrap/CloseButton";
 
 export default function Home() {
-  const [userData, setUserData] = useState({});
+  const [data, setData] = useState(JSON.parse(localStorage.getItem("dataBoard")));
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const history = useHistory();
 
@@ -23,95 +23,14 @@ export default function Home() {
     setIsOpen(true);
   }
 
-
   function closeModal() {
     setIsOpen(false);
   }
-
-  const data = {
-    lanes: [
-      {
-        id: "liberado",
-        title: "Liberado",
-        label: "2/2",
-        cards: [
-          {
-            id: "Card1",
-            title: "Write Blog",
-            description: "Can AI make memes",
-            label: "30 mins",
-          },
-          {
-            id: "Card2",
-            title: "Pay Rent",
-            description: "Transfer via NEFT",
-            label: "5 mins",
-            metadata: { sha: "be312a1" },
-          },
-        ],
-      },
-      {
-        id: "preparo",
-        title: "Em Preparo",
-        label: "2/2",
-        cards: [
-          {
-            id: "Card3",
-            title: "Write Blog",
-            description: "Can AI make memes",
-            label: "30 mins",
-          },
-          {
-            id: "Card4",
-            title: "Pay Rent",
-            description: "Transfer via NEFT",
-            label: "5 mins",
-            metadata: { sha: "be312a1" },
-          },
-        ],
-      },
-      {
-        id: "atendido",
-        title: "Atendido Totalmente",
-        label: "2/2",
-        cards: [
-          {
-            id: "Card5",
-            title: "Write Blog",
-            description: "Can AI make memes",
-            label: "30 mins",
-          },
-          {
-            id: "Card6",
-            title: "Pay Rent",
-            description: "Transfer via NEFT",
-            label: "5 mins",
-            metadata: { sha: "be312a1" },
-          },
-        ],
-      },
-      {
-        id: "finalizado",
-        title: "Finalizado",
-        label: "2/2",
-        cards: [
-          {
-            id: "Card7",
-            title: "Write Blog",
-            description: "Can AI make memes",
-            label: "30 mins",
-          },
-          {
-            id: "Card8",
-            title: "Pay Rent",
-            description: "Transfer via NEFT",
-            label: "5 mins",
-            metadata: { sha: "be312a1" },
-          },
-        ],
-      },
-    ],
-  };
+  
+  function changeBoard(e) {
+    setData(e);
+    localStorage.setItem("dataBoard", JSON.stringify(e));
+  }
 
   const customStyles = {
     content: {
@@ -161,6 +80,7 @@ export default function Home() {
           }}
         >
           <Board
+            onDataChange={(e) => changeBoard(e)}
             data={data}
             onCardClick={openModal}
             style={{
