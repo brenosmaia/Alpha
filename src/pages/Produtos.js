@@ -75,7 +75,6 @@ export default function Produtos() {
             <Nav className="me-auto">
             <Nav.Link onClick={e => navigateToHome(e)}>Pedidos</Nav.Link>
             <Nav.Link onClick={e => navigateToProducts(e)}>Produtos</Nav.Link>
-            <Nav.Link onClick={e => navigateToGraph(e)}>Gráficos</Nav.Link>
           </Nav>
             </div>
         </Navbar>
@@ -98,22 +97,57 @@ export default function Produtos() {
            
             <table class="produtosTabela" style={{ width: "100%" }}>
                 <thead>
-                    <tr>
+                    <tr style={{color: "white",
+                                fontFamily: "bald",
+                                fontSize: "20px"}}>
                         <th scope="col">Nome</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Preço</th>
                     </tr>
                 </thead>
                 <tbody>
-                
-                {arrayProdutos.map(element => {
-                    <tr>
-                        <th scope="col">{element.nome}</th>
-                        <th scope="col">{element.descricao}</th>
-                        <th scope="col">{element.preco}</th>
-                        {console.log(element.preco)}
-                    </tr>
-                })}
+                <tr style={{color: "white",
+                            fontSize: "15px"}}>
+                    <th scope="col">Refrigerante</th>
+                    <th scope="col">Coca-cola</th>
+                    <th scope="col">R$ 5,50</th>
+                </tr>
+                <tr style={{color: "white",
+                            fontSize: "15px"}}>
+                    <th scope="col">Hamburger</th>
+                    <th scope="col">X-burguer</th>
+                    <th scope="col">R$ 10,00</th>
+                </tr>
+                <tr style={{color: "white",
+                            fontSize: "15px"}}>
+                    <th scope="col">Sanduíche</th>
+                    <th scope="col">Atum</th>
+                    <th scope="col">R$ 7,00</th>
+                </tr>
+                <tr style={{color: "white",
+                            fontSize: "15px"}}>
+                    <th scope="col">Suco</th>
+                    <th scope="col">Uva</th>
+                    <th scope="col">R$ 7,00</th>
+                </tr>
+                <tr style={{color: "white",
+                            fontSize: "15px"}}>
+                    <th scope="col">Salgado</th>
+                    <th scope="col"></th>
+                    <th scope="col">R$ 5,00</th>
+                </tr>
+                <tr style={{color: "white",
+                            fontSize: "15px"}}>
+                    <th scope="col">Batata frita</th>
+                    <th scope="col"></th>
+                    <th scope="col">R$ 5,00</th>
+                </tr>
+                <tr style={{color: "white",
+                            fontSize: "15px"}}>
+                    <th scope="col">Caldo de cana</th>
+                    <th scope="col"></th>
+                    <th scope="col">R$ 4,00</th>
+                </tr>
                 </tbody>
             </table>
         </div>
