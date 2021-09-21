@@ -9,6 +9,7 @@ import CloseButton from "react-bootstrap/CloseButton";
 
 export default function Orders() {
   const [userData, setUserData] = useState({});
+  const [pedido, setPedido] = useState([]);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const history = useHistory();
 
@@ -28,6 +29,28 @@ export default function Orders() {
     setIsOpen(false);
   }
 
+  // function setItem(e) {
+  //   console.log(e.target.defaultValue);
+  //   let item = e.target.defaultValue;
+  //   let pedidoAux = pedido;
+  //   pedidoAux.push({ item, quantidade: "1" });
+  //   setPedido(pedidoAux);
+  // }
+
+  function sendPedido(e) {
+    console.log(e);
+    let id = Math.round(Math.random() * 1000);
+    let card = {
+      id,
+      title: id,
+      description: "Pedido",
+      label: "30 mins",
+    };
+
+    let board = JSON.parse(localStorage.getItem("dataBoard"));
+    board.lanes[0].cards.push(card);
+    localStorage.setItem("dataBoard", JSON.stringify(board));
+  }
 
   const customStyles = {
     content: {
@@ -93,6 +116,7 @@ export default function Orders() {
               <div>Quantidade</div>
             </div>
             <Form.Group
+
               className="mb-3"
               controlId="formBasicCheckbox"
               style={{
@@ -102,7 +126,81 @@ export default function Orders() {
                 maxWidth: "900px",
               }}
             >
-              <Form.Check type="checkbox" label="item 1" />
+              <Form.Check
+                type="checkbox"
+                label="Refrigerante, Coca-Cola"
+                value="Refrigerante, Coca-Cola"
+              />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="Hamburger, X-burger" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="Sanduíche, Atum" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="Suco, Uva" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="Salgado" />
+              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
+            </Form.Group>
+            <Form.Group
+
+              className="mb-3"
+              controlId="formBasicCheckbox"
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                maxWidth: "900px",
+              }}
+            >
+              <Form.Check type="checkbox" label="Batada Frita" />
               <Form.Control size="sm" type="text" style={{ width: "50px" }} />
             </Form.Group>
             <Form.Group
@@ -115,72 +213,7 @@ export default function Orders() {
                 maxWidth: "900px",
               }}
             >
-              <Form.Check type="checkbox" label="item 2" />
-              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="formBasicCheckbox"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                maxWidth: "900px",
-              }}
-            >
-              <Form.Check type="checkbox" label="item 3" />
-              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="formBasicCheckbox"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                maxWidth: "900px",
-              }}
-            >
-              <Form.Check type="checkbox" label="item 4" />
-              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="formBasicCheckbox"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                maxWidth: "900px",
-              }}
-            >
-              <Form.Check type="checkbox" label="item 5" />
-              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="formBasicCheckbox"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                maxWidth: "900px",
-              }}
-            >
-              <Form.Check type="checkbox" label="item 6" />
-              <Form.Control size="sm" type="text" style={{ width: "50px" }} />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="formBasicCheckbox"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                maxWidth: "900px",
-              }}
-            >
-              <Form.Check type="checkbox" label="item 7" />
+              <Form.Check type="checkbox" label="Caldo de Cana" />
               <Form.Control size="sm" type="text" style={{ width: "50px" }} />
             </Form.Group>
 
@@ -189,7 +222,12 @@ export default function Orders() {
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
 
-            <Button variant="primary" type="submit" style={{ width: "100px" }} >
+            <Button
+              onClick={(e) => sendPedido(e)}
+              variant="primary"
+              type="submit"
+              style={{ width: "100px" }}
+            >
               Criar
             </Button>
           </Form>

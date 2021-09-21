@@ -8,7 +8,9 @@ import Modal from "react-modal";
 import CloseButton from "react-bootstrap/CloseButton";
 
 export default function Home() {
-  const [data, setData] = useState(JSON.parse(localStorage.getItem("dataBoard")));
+  const [data, setData] = useState(
+    JSON.parse(localStorage.getItem("dataBoard"))
+  );
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const history = useHistory();
 
@@ -26,7 +28,7 @@ export default function Home() {
   function closeModal() {
     setIsOpen(false);
   }
-  
+
   function changeBoard(e) {
     setData(e);
     localStorage.setItem("dataBoard", JSON.stringify(e));
@@ -111,18 +113,16 @@ export default function Home() {
             justifyContent: "space-between",
           }}
         >
-          <div>2 coxinhas</div>
-          <div>1 coquinha</div>
-          <div>1 pizza de 2 dias</div>
-          <div>1 canja pra viajem</div>
-          <div>1 sobremesa</div>
-          {/* <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
-          </form> */}
+          <div>1 Refrigerante, Coca-Cola</div>
+          <div>2 Hamburger, X-burger</div>
+          <div>1 Salgado</div>
+          <div
+            style={{
+              margin: "20px",
+            }}
+          >
+            Hamburguer sem ovo
+          </div>
         </div>
       </Modal>
     </>
