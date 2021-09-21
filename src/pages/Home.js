@@ -60,7 +60,7 @@ export default function Home() {
           <Navbar.Brand onClick={(e) => navigateToHome(e)}>Alpha</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={(e) => navigateToHome(e)}>
-              Visualizar pedidos
+              Pedidos
             </Nav.Link>
             <Nav.Link onClick={(e) => navigateToOrders(e)}>
               Criar pedidos
