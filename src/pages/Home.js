@@ -71,9 +71,9 @@ export default function Home() {
             <Nav.Link onClick={(e) => navigateToOrders(e)}>
               Criar pedidos
             </Nav.Link>
-            <Nav.Link onClick={(e) => navigateToProducts(e)}>
+            {/* <Nav.Link onClick={(e) => navigateToProducts(e)}>
               Produtos
-            </Nav.Link>
+            </Nav.Link> */}
             
           </Nav>
         </div>

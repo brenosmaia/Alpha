@@ -29,6 +29,10 @@ export default function Orders() {
     setIsOpen(false);
   }
 
+  const navigateToProducts = (event) => {
+    history.push("/produtos");
+  };
+
   // function setItem(e) {
   //   console.log(e.target.defaultValue);
   //   let item = e.target.defaultValue;
@@ -79,12 +83,15 @@ export default function Orders() {
         <div style={{ display: "flex" }}>
           <Navbar.Brand onClick={(e) => navigateToHome(e)}>Alpha</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link onClick={(e) => navigateToHome(e)}>
-              Visualizar pedidos
+          <Nav.Link onClick={(e) => navigateToHome(e)}>
+              Pedidos
             </Nav.Link>
             <Nav.Link onClick={(e) => navigateToOrders(e)}>
               Criar pedidos
             </Nav.Link>
+            {/* <Nav.Link onClick={(e) => navigateToProducts(e)}>
+              Produtos
+            </Nav.Link> */}
           </Nav>
         </div>
       </Navbar>

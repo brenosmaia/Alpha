@@ -77,7 +77,6 @@ export default function Produtos() {
           <Nav className="me-auto">
             <Nav.Link onClick={(e) => navigateToHome(e)}>Pedidos</Nav.Link>
             <Nav.Link onClick={(e) => navigateToProducts(e)}>Produtos</Nav.Link>
-            <Nav.Link onClick={(e) => navigateToGraph(e)}>Gráficos</Nav.Link>
           </Nav>
         </div>
       </Navbar>
