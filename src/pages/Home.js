@@ -18,6 +18,10 @@ export default function Home() {
   const navigateToOrders = (event) => {
     history.push("/orders");
   };
+  const navigateToProducts = (event) => {
+    history.push("/produtos");
+  };
+
 
   function openModal() {
     setIsOpen(true);
@@ -65,6 +69,10 @@ export default function Home() {
             <Nav.Link onClick={(e) => navigateToOrders(e)}>
               Criar pedidos
             </Nav.Link>
+            <Nav.Link onClick={(e) => navigateToProducts(e)}>
+              Produtos
+            </Nav.Link>
+            
           </Nav>
         </div>
       </Navbar>

@@ -17,7 +17,7 @@ export default function Produtos() {
     const [modalIsOpen, setIsOpen] = React.useState(false);
   
     const navigateToHome = (event) =>{
-        history.push("/homeadm");
+        history.push("/home");
     }
 
     const navigateToGraph = (event) =>{
